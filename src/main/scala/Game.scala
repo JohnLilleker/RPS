@@ -8,8 +8,10 @@ object Game {
     println("Rock Paper Scissors")
     println(s"First to $win")
 
+    var round = 1
     while (score1 < win && score2 < win) {
-
+      println(s"Round $round ${"="*20}")
+      round += 1
       println(s"${p1.name} : $score1 | ${p2.name} : $score2")
 
       val move1 = p1.play
@@ -36,6 +38,7 @@ object Game {
         case None =>
           println("Its a draw")
       }
+      println()
     }
 
     if (score1 > score2) p1 else p2
